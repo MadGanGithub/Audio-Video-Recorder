@@ -33,7 +33,7 @@ const Home = () => {
         formData.append('video', videoData, 'recorded_video.webm');
         formData.append('name',name)
 
-            await axios.post("http://localhost:4200/upload-video",formData)
+            await axios.post("/upload-video",formData)
             setLoading(false)
             window.location.reload()
             toast.success("Video Added")
@@ -44,7 +44,7 @@ const Home = () => {
           formData.append('audio', audioData, 'recorded_audio.wav');
           formData.append('name',name)
 
-            await axios.post("http://localhost:4200/upload-audio",formData)
+            await axios.post("/upload-audio",formData)
             setLoading(false)
             window.location.reload()
             toast.success("Audio Added")
