@@ -10,7 +10,7 @@ const app=express();
 
 //cors 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://audio-video-recorder.vercel.app',
     credentials: true
   }));
 
