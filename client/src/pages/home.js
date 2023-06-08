@@ -35,8 +35,8 @@ const Home = () => {
 
             await axios.post("http://localhost:4200/upload-video",formData)
             setLoading(false)
-            toast.success("Video Added")
             window.location.reload()
+            toast.success("Video Added")
 
         }else{
           setLoading(true)
@@ -46,8 +46,8 @@ const Home = () => {
 
             await axios.post("http://localhost:4200/upload-audio",formData)
             setLoading(false)
-            toast.success("Audio Added")
             window.location.reload()
+            toast.success("Audio Added")
 
           }
     };
@@ -65,6 +65,19 @@ const Home = () => {
     
     const handleVideoData=(videoData)=>{
         setVideoData(videoData)
+    }
+
+    const handleAudio=()=>{
+      console.log("Audio time")
+      setVideoData(null)
+      console.log(videoData)
+      console.log(audioData)
+    }
+    const handleVideo=()=>{
+      console.log("Video time")
+      setAudioData(null)
+      console.log(videoData)
+      console.log(audioData)
     }
     
       return (
@@ -111,8 +124,8 @@ const Home = () => {
         onChange={handleChange}
         aria-label="Platform"
       >
-        <ToggleButton value="audio">Audio</ToggleButton>
-        <ToggleButton value="video">Video</ToggleButton>
+        <ToggleButton value="audio" onClick={handleAudio}>Audio</ToggleButton>
+        <ToggleButton value="video" onClick={handleVideo}>Video</ToggleButton>
       </ToggleButtonGroup>
 
       {alignment === 'audio' ? (

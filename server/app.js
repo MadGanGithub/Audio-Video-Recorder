@@ -39,6 +39,7 @@ app.post('/upload-audio', upload.single('audio'), async(req, res) => {
         size: audioFile.size,
         data: Buffer.from(data),
     })
+    console.log("Audio final")
     res.status(200).json({ message: 'Audio file stored successfully' });
 
 }catch(error){
